@@ -10,8 +10,8 @@ import os
 from config import Config
 
 app = Flask(__name__, 
-            template_folder=os.path.abspath(os.path.join(os.path.dirname(__file__), 'templates')),
-            static_folder=os.path.abspath(os.path.join(os.path.dirname(__file__), 'static')))
+            template_folder='templates',
+            static_folder='static')
 app.config.from_object(Config)
 db = SQLAlchemy(app)
 
@@ -144,4 +144,3 @@ if __name__ == '__main__':
     with app.app_context():
         db.create_all()
     app.run(debug=True)
-
