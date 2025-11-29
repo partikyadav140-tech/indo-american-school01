@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="hero single-page reveal">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="reveal">School Events & Co-Curricular Activities</h1>
+    <p class="lead reveal" style="animation-delay: 0.2s;">
+      Celebrating learning, achievements, and togetherness. Beyond the classroom, we foster talent and teamwork.
+    </p>
+  </div>
+</section>
+
+<!-- Upcoming Events (Calendar style) -->
+<section class="section reveal">
+  <div class="container">
+    <h2 class="section-title">Upcoming Main Events</h2>
+    <div class="event-card reveal">
+        <div class="event-date">
+            <span>22</span>
+            OCT
+        </div>
+        <div>
+            <h4>Annual Sports Meet 2025</h4>
+            <p>Join us for an exciting day of athletics, team spirit, and healthy competition. All parents are invited to attend and cheer for our students. <br><strong>Venue:</strong> School Main Ground | <strong>Time:</strong> 9:00 AM onwards</p>
+        </div>
+    </div>
+    <div class="event-card reveal" style="animation-delay: 0.2s;">
+        <div class="event-date">
+            <span>05</span>
+            NOV
+        </div>
+        <div>
+            <h4>Innovate: Science & Robotics Exhibition</h4>
+            <p>Students from Grades 6-12 showcase their innovative projects and working models in Science, Technology, and Mathematics. <br><strong>Venue:</strong> Atal Tinkering Lab Block | <strong>Time:</strong> 10:00 AM - 1:00 PM</p>
+        </div>
+    </div>
+    <div class="event-card reveal" style="animation-delay: 0.4s;">
+        <div class="event-date">
+            <span>15</span>
+            DEC
+        </div>
+        <div>
+            <h4>Cultural Fest: Harmony</h4>
+            <p>A grand celebration of music, dance, drama, and creativity. Featuring performances by students across all grade levels. <br><strong>Venue:</strong> School Auditorium | <strong>Time:</strong> 5:00 PM onwards</p>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- Co-Curricular Activities Focus -->
+<section class="section reveal" style="background-color: var(--color-light-grey);">
+    <div class="container">
+        <h2 class="section-title">The Value of Co-Curriculars</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
+            We believe that a balanced education includes rigorous physical and creative pursuits that build leadership and discipline.
+        </p>
+        <div class="four-grid">
+            <div class="card icon-box reveal">
+                <i class="fas fa-basketball-ball"></i>
+                <h4>Competitive Sports</h4>
+                <p>Training in Basketball, Cricket, Football, and Athletics with inter-school competitions.</p>
+            </div>
+            <div class="card icon-box reveal" style="animation-delay: 0.1s;">
+                <i class="fas fa-music"></i>
+                <h4>Fine Arts & Music</h4>
+                <p>Instrumental music, vocal training, classical dance, and painting classes.</p>
+            </div>
+            <div class="card icon-box reveal" style="animation-delay: 0.2s;">
+                <i class="fas fa-handshake"></i>
+                <h4>Clubs & Societies</h4>
+                <p>Debate Club, Literary Society, Eco Club, and Public Speaking forums.</p>
+            </div>
+            <div class="card icon-box reveal" style="animation-delay: 0.3s;">
+                <i class="fas fa-campground"></i>
+                <h4>Adventure & Trips</h4>
+                <p>Annual excursions, adventure camps, and educational field trips.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Past Highlights -->
+<section class="section reveal">
+  <div class="container">
+    <h2 class="section-title">Past Event Highlights</h2>
+    <div class="gallery-grid">
+      <img src="https://placehold.co/400x250/1A376B/ffffff?text=Event+Photo+1%3A+Annual+Day" alt="Annual Day" class="reveal">
+      <img src="https://placehold.co/400x250/FF6B6B/ffffff?text=Event+Photo+2%3A+Independence+Day" alt="Independence Day" class="reveal" style="animation-delay: 0.1s;">
+      <img src="https://placehold.co/400x250/00BFFF/ffffff?text=Event+Photo+3%3A+Sports+Winners" alt="Sports Winners" class="reveal" style="animation-delay: 0.2s;">
+      <img src="https://placehold.co/400x250/14284d/ffffff?text=Event+Photo+4%3A+School+Trip" alt="School Trip" class="reveal">
+      <img src="https://placehold.co/400x250/1A376B/ffffff?text=Event+Photo+5%3A+Art+Exhibit" alt="Art Exhibition" class="reveal" style="animation-delay: 0.1s;">
+      <img src="https://placehold.co/400x250/FF6B6B/ffffff?text=Event+Photo+6%3A+Debate+Competition" alt="Debate Competition" class="reveal" style="animation-delay: 0.2s;">
+    </div>
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="{{ url_for('gallery') }}" class="btn-primary">View Full Gallery</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

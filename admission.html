@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero single-page reveal">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="reveal">Admissions Open 2025–26</h1>
+    <p class="lead reveal" style="animation-delay: 0.2s;">
+      Join Indo American Sr. Sec. School — where potential meets purpose, and dreams take flight.
+    </p>
+  </div>
+</section>
+
+<!-- ADMISSION PROCESS & ELIGIBILITY -->
+<section class="section reveal">
+  <div class="container two-grid">
+    <div>
+      <h2 class="section-title" style="text-align: left;">The Three-Step Admission Process</h2>
+      <p>
+        Indo American Sr. Sec. School welcomes students from all backgrounds. Our transparent process ensures every application is assessed fairly on merit and potential.
+      </p>
+      <ol class="list-styled" style="padding-left: 20px;">
+        <li style="font-weight: 600; margin-bottom: 10px;"><strong>Step 1: Online Application Submission</strong><br><small>Fill the comprehensive admission form below with accurate details. You will receive an acknowledgment receipt.</small></li>
+        <li style="font-weight: 600; margin-bottom: 10px;"><strong>Step 2: Interaction/Assessment (Aptitude & Counselling)</strong><br><small>Applicants will be invited for a mandatory interaction and a written assessment, specific to the grade level applying for.</small></li>
+        <li style="font-weight: 600; margin-bottom: 10px;"><strong>Step 3: Confirmation & Fee Submission</strong><br><small>Successful candidates will be notified. Admission is confirmed upon submission of required documents and payment of the first fee installment.</small></li>
+      </ol>
+    </div>
+    
+    <div class="card reveal" style="background-color: var(--color-light-grey);">
+      <h3>Eligibility Criteria</h3>
+      <ul style="list-style: disc; padding-left: 20px;">
+        <li>Age requirements as per CBSE guidelines for the respective grade.</li>
+        <li>Original Transfer Certificate (T.C.) from the previous school (Grade 2 onwards).</li>
+        <li>A minimum B grade or equivalent in core subjects for Senior Secondary admission.</li>
+        <li>Successful completion of the school's entrance assessment/interview.</li>
+      </ul>
+      <h3 style="margin-top: 20px;">Required Documents</h3>
+      <p>Birth Certificate, Address Proof, Aadhar Card, Last Report Card, and 4 Passport Size Photos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ADMISSION FORM -->
+<section class="section reveal" style="background-color: var(--color-background); border-top: 1px solid #eee;">
+  <div class="container">
+    <h2 class="section-title">Apply for Admission Today</h2>
+    <p style="text-align: center; max-width: 600px; margin: 0 auto 30px;">
+      Please fill out the preliminary application form below. Our admissions team will contact you within 48 hours.
+    </p>
+    <form id="admissionForm" method="POST" action="{{ url_for('admission') }}" class="form-grid reveal">
+      <label>Child's Full Name</label>
+      <input type="text" name="name" placeholder="Enter full name" required>
+      
+      <label>Date of Birth</label>
+      <input type="date" name="dob" required>
+      
+      <label>Applying for Grade</label>
+      <select name="course" required>
+        <option value="">Select Grade</option>
+        <option>Nursery</option>
+        <option>KG</option>
+        <option>1st to 5th (Primary)</option>
+        <option>6th to 8th (Middle)</option>
+        <option>9th</option>
+        <option>10th</option>
+        <option>11th (Science)</option>
+        <option>11th (Commerce)</option>
+        <option>11th (Humanities)</option>
+        <option>12th</option>
+      </select>
+      
+      <label>Parent’s Name</label>
+      <input type="text" name="parent_name" placeholder="Enter parent/guardian name" required>
+      
+      <label>Contact Number</label>
+      <input type="tel" name="phone" placeholder="e.g., +91 9876543210" required>
+      
+      <label>Email Address</label>
+      <input type="email" name="email" placeholder="Enter parent email address" required>
+      
+      <label class="full">Residential Address</label>
+      <textarea name="address" placeholder="Enter residential address" required class="full"></textarea>
+
+      <label class="full">Additional Message (Previous school details, if any)</label>
+      <textarea name="message" placeholder="Any additional message or query you may have." class="full"></textarea>
+
+      <div class="form-group full">
+        <button type="submit" class="btn-submit">Submit Application</button>
+      </div>
+
+      <!-- Success and Error messages handled by Flask flash messages, but kept for JS implementation if needed -->
+      <div id="formSuccess" class="form-success hidden full">
+        <i class="fa fa-check-circle"></i>
+        <p>🎉 Thank you! Your admission form has been submitted successfully. We will be in touch shortly.</p>
+      </div>
+      <div id="formError" class="form-error hidden full">
+        <i class="fa fa-times-circle"></i>
+        <p>⚠️ Submission failed. Please check your inputs or try again later.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<!-- The actual JS submission logic is handled in premium-final.js, but this block is retained for custom page scripts -->
+{% endblock %}

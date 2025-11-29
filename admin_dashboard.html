@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<section class="hero single-page reveal" style="height: 30vh; min-height: 200px;">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="reveal">Admin Dashboard</h1>
+    <p class="lead reveal" style="animation-delay: 0.2s;">Welcome, Admin! <a href="{{ url_for('admin_logout') }}" style="color: var(--color-secondary); font-weight: 600;">Logout <i class="fas fa-sign-out-alt"></i></a></p>
+  </div>
+</section>
+
+<section class="section reveal">
+  <div class="container">
+    <h2 class="section-title" style="text-align: left;">Admission Applications</h2>
+    {% if admissions %}
+        <div class="admin-card" style="overflow-x:auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Course</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for admission in admissions %}
+                    <tr>
+                        <td>{{ admission.id }}</td>
+                        <td>{{ admission.name }}</td>
+                        <td>{{ admission.email }}</td>
+                        <td>{{ admission.phone }}</td>
+                        <td>{{ admission.course }}</td>
+                        <td>{{ admission.created_at.strftime('%Y-%m-%d %H:%M') }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}\n        <div class="admin-card"><p>No admission applications yet.</p></div>
+    {% endif %}
+
+    <h2 class="section-title" style="margin-top:40px; text-align: left;">Contact Messages</h2>
+    {% if contacts %}
+        <div class="admin-card" style="overflow-x:auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Subject</th>
+                        <th>Message</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for contact in contacts %}
+                    <tr>
+                        <td>{{ contact.id }}</td>
+                        <td>{{ contact.name }}</td>
+                        <td>{{ contact.email }}</td>
+                        <td>{{ contact.subject }}</td>
+                        <td style="max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ contact.message }}</td>
+                        <td>{{ contact.created_at.strftime('%Y-%m-%d %H:%M') }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}\n        <div class="admin-card"><p>No contact messages yet.</p></div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

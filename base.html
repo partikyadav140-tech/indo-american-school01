@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% block title %}Indo American Sr. Sec. School{% endblock %}</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Premium Styles (New unified professional CSS) -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/premium-final.css') }}">
+
+  {% block styles %}{% endblock %}
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-row">
+      <a class="nav-logo" href="{{ url_for('index') }}">
+        <!-- Use a fallback placeholder for the logo image URL -->
+        <img src="{{ url_for('static', filename='images/new_logo.png') }}" alt="Indo American" onerror="this.onerror=null; this.src='https://placehold.co/40x40/1A376B/ffffff?text=IAS'">
+        <span>Indo American School</span>
+      </a>
+
+      <!-- Main Navigation Links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="{{ url_for('index') }}" class="{% if request.path == url_for('index') %}active{% endif %}">Home</a></li>
+        <li><a href="{{ url_for('about') }}" class="{% if request.path == url_for('about') %}active{% endif %}">About Us</a></li>
+        <li><a href="{{ url_for('academics') }}" class="{% if request.path == url_for('academics') %}active{% endif %}">Academics</a></li>
+        <li><a href="{{ url_for('events') }}" class="{% if request.path == url_for('events') %}active{% endif %}">Activities</a></li>
+        <li><a href="{{ url_for('gallery') }}" class="{% if request.path == url_for('gallery') %}active{% endif %}">Gallery</a></li>
+        <li><a href="{{ url_for('contact') }}" class="{% if request.path == url_for('contact') %}active{% endif %}">Contact</a></li>
+        <li><a href="{{ url_for('admission') }}" class="btn-glow btn-small nav-extra">Apply Now</a></li>
+      </ul>
+
+      <!-- Mobile Menu Toggle -->
+      <div class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="container" style="margin-top: 20px;">
+          {% for category, message in messages %}
+            <div class="form-{{ 'success' if category == 'success' else 'error' }}" role="alert">
+              {{ message }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="reveal">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Indo American School</h3>
+          <p>Nurturing mindful leaders & global citizens since 1995. Committed to holistic growth.</p>
+          <div class="social-links" style="display:flex; gap:15px; margin-top:20px;">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">Our History</a></li>
+            <li><a href="{{ url_for('academics') }}">Curriculum</a></li>
+            <li><a href="{{ url_for('admission') }}">Admissions</a></li>
+            <li><a href="{{ url_for('admin_login') }}">Admin Login</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Academic Focus</h3>
+          <ul>
+            <li><a href="{{ url_for('academics') }}">CBSE Curriculum</a></li>
+            <li><a href="{{ url_for('academics') }}">STEM Education</a></li>
+            <li><a href="{{ url_for('academics') }}">Digital Literacy</a></li>
+            <li><a href="{{ url_for('academics') }}">Career Counselling</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Get In Touch</h3>
+          <ul>
+            <li><i class="fas fa-map-marker-alt" style="margin-right:5px;"></i> Agrasen Chowk, Jhajjar, Haryana, 124103</li>
+            <li><i class="fas fa-phone" style="margin-right:5px;"></i> <a href="tel:+917404267082">+91 7404267082</a></li>
+            <li><i class="fas fa-envelope" style="margin-right:5px;"></i> <a href="mailto:american.indo2@gmail.com">american.indo2@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; {{ current_year or 2025 }} Indo American Sr. Sec. School. All Rights Reserved. | Designed with passion for education.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Premium JS (New unified professional JS) -->
+  <script src="{{ url_for('static', filename='js/premium-final.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

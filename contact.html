@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us - Indo American Sr. Sec. School{% endblock %}
+
+{% block content %}
+<section class="hero single-page reveal">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="reveal">Connect With Our School</h1>
+    <p class="lead reveal" style="animation-delay: 0.2s;">
+      We'd love to hear from you! Reach out for admissions, partnership opportunities, or general inquiries.
+    </p>
+  </div>
+</section>
+
+<!-- Contact Main Section -->
+<section class="section reveal">
+  <div class="container two-grid">
+    
+    <!-- Contact Info Cards & Map -->
+    <div class="reveal">
+      <h2 class="section-title" style="text-align: left;">Contact Information</h2>
+      <p>Feel free to contact us through any of the following methods. Our administration office is open Monday to Saturday.</p>
+      
+      <div class="three-grid" style="margin-top: 0;">
+        <div class="card icon-box" style="padding: 15px;">
+          <i class="fas fa-map-marker-alt" style="font-size: 2rem; width: auto; height: auto; line-height: 1; margin: 0;"></i>
+          <h3 style="margin-top: 10px;">Visit Us</h3>
+          <p>Agrasen Chowk, Jhajjar<br>Haryana - 124103, India</p>
+        </div>
+
+        <div class="card icon-box" style="padding: 15px;">
+          <i class="fas fa-phone-alt" style="font-size: 2rem; width: auto; height: auto; line-height: 1; margin: 0;"></i>
+          <h3 style="margin-top: 10px;">Call Us</h3>
+          <p><a href="tel:+917404267082">+91 7404267082</a></p>
+          <p class="small" style="font-weight: 500;">Mon - Sat: 8:00 AM - 3:00 PM</p>
+        </div>
+
+        <div class="card icon-box" style="padding: 15px;">
+          <i class="fas fa-envelope" style="font-size: 2rem; width: auto; height: auto; line-height: 1; margin: 0;"></i>
+          <h3 style="margin-top: 10px;">Email Us</h3>
+          <p><a href="mailto:american.indo2@gmail.com">american.indo2@gmail.com</a></p>
+          <p class="small" style="font-weight: 500;">Admissions & General Inquiries</p>
+        </div>
+      </div>
+
+      <!-- Map Placeholder -->
+      <div style="height: 300px; background-color: #e9ecef; border-radius: 12px; margin-top: 30px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);">
+        <p style="color: var(--color-light-text); font-style: italic;">[Placeholder for Google Map Embed]</p>
+      </div>
+
+    </div>
+
+    <!-- Contact Form -->
+    <div class="card reveal" style="padding: 30px; background-color: var(--color-light-grey);">
+      <h2 class="section-title" style="text-align: left;">Send Us a Message</h2>
+      <form id="contactForm" method="POST" action="{{ url_for('contact') }}" class="form-grid">
+        <label>Full Name</label>
+        <input type="text" name="name" placeholder="Enter your full name" required>
+        
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="Enter your email address" required>
+        
+        <label>Contact Number</label>
+        <input type="tel" name="phone" placeholder="Enter phone number" required>
+        
+        <label>Subject</label>
+        <select name="subject" required>
+          <option value="">Select Inquiry Type</option>
+          <option>Admission Inquiry</option>
+          <option>Career/Job Application</option>
+          <option>General Information</option>
+          <option>School Tour Request</option>
+        </select>
+        
+        <label class="full">Your Message</label>
+        <textarea name="message" placeholder="Type your detailed message here..." required class="full"></textarea>
+        
+        <div class="form-group full">
+            <button type="submit" class="btn-submit">Submit Message</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section reveal" style="background-color: var(--color-background);">
+  <div class="container">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
+        Find quick answers to the most common questions about our school, admissions, and facilities.
+    </p>
+    <div class="two-grid">
+      <div class="card reveal">
+        <h3>What are the admission timings?</h3>
+        <p>Admissions are open throughout the year, but the main session application deadline is March 15th. We recommend applying early for the academic session starting in April.</p>
+      </div>
+
+      <div class="card reveal" style="animation-delay: 0.1s;">
+        <h3>How can I schedule a school tour?</h3>
+        <p>You can schedule a private tour by calling us or filling out the contact form above with the subject "School Tour Request." We conduct tours on weekdays between 9:00 AM and 1:00 PM.</p>
+      </div>
+
+      <div class="card reveal" style="animation-delay: 0.2s;">
+        <h3>What documents are required for admission?</h3>
+        <p>Required documents include the child's birth certificate, previous school records (T.C. and report card), passport-size photos, and parent/guardian address proof.</p>
+      </div>
+
+      <div class="card reveal" style="animation-delay: 0.3s;">
+        <h3>Do you provide transportation?</h3>
+        <p>Yes, we provide safe and reliable school bus services covering major areas around Jhajjar and surrounding towns. Routes and timings can be obtained from the Admin Office.</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<!-- No need for client-side JS here as form handling is done via Flask redirect -->
+{% endblock %}

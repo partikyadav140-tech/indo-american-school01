@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero single-page reveal">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="reveal">About Indo American Sr. Sec. School</h1>
+    <p class="lead reveal" style="animation-delay: 0.2s;">
+      Shaping young minds for a brighter tomorrow through knowledge, character, and innovation.
+    </p>
+  </div>
+</section>
+
+<!-- OUR STORY & HISTORY -->
+<section class="section reveal">
+  <div class="container two-grid">
+    <div>
+      <h2 class="section-title" style="text-align: left;">Our Legacy of Excellence</h2>
+      <p>
+        Founded in **1995**, Indo American Sr. Sec. School began with a singular vision: to be a beacon of quality, holistic education in Jhajjar. Over the decades, we have grown from a small institution into a leading CBSE-affiliated school, consistently setting benchmarks in academic and co-curricular achievements.
+      </p>
+      <p>
+        Our journey is marked by continuous adaptation. We were one of the first schools in the region to integrate **digital classrooms** and dedicated **robotics labs**, ensuring our students are prepared for the future economy. Every year, we celebrate a growing list of successful alumni placed in prestigious universities across India and abroad.
+      </p>
+      <a href="{{ url_for('gallery') }}" class="btn-outline">See Our Campus</a>
+    </div>
+
+    <div>
+      <img src="https://placehold.co/500x350/FF6B6B/ffffff?text=School+History+Building" alt="School campus" class="about-img reveal">
+    </div>
+  </div>
+</section>
+
+<!-- VISION & MISSION -->
+<section class="section reveal" style="background-color: var(--color-light-grey);">
+  <div class="container three-grid philosophy-grid">
+    <div class="card reveal" style="animation-delay: 0.1s;">
+      <h3><i class="fas fa-binoculars"></i> Our Vision</h3>
+      <p>To cultivate future leaders who are academically proficient, ethically sound, and globally conscious, capable of driving positive change in their communities.</p>
+    </div>
+
+    <div class="card reveal" style="animation-delay: 0.3s;">
+      <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+      <p>To provide a stimulating, supportive, and inclusive learning environment that promotes curiosity, critical thinking, creativity, and compassion in every student.</p>
+    </div>
+
+    <div class="card reveal" style="animation-delay: 0.5s;">
+      <h3><i class="fas fa-shield-alt"></i> Our Core Values</h3>
+      <p>Integrity, Respect, Excellence, Service, and Perseverance. These values guide our pedagogy and student interactions daily.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP & FACULTY -->
+<section class="section reveal">
+  <div class="container">
+    <h2 class="section-title">Leadership & Dedicated Faculty</h2>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
+      Our educators are the pillars of our institution. They are highly qualified professionals who serve as mentors, guiding students to unlock their full potential.
+    </p>
+
+    <!-- Leadership Grid -->
+    <div class="four-grid" style="margin-bottom: 40px;">
+      <!-- Directors/Chairman (Use Placeholders for images) -->
+      <div class="card icon-box reveal">
+        <img src="https://placehold.co/200x250/1A376B/ffffff?text=Director" alt="Director" class="faculty-img">
+        <h4>Mr. Bijender Kadiyan</h4>
+        <p style="color: var(--color-secondary); font-weight: 600;">Director</p>
+        <small>Visionary Educationist</small>
+      </div>
+
+      <div class="card icon-box reveal" style="animation-delay: 0.2s;">
+        <img src="https://placehold.co/200x250/1A376B/ffffff?text=Principal" alt="Principal" class="faculty-img">
+        <h4>Mrs. Mamta</h4>
+        <p style="color: var(--color-secondary); font-weight: 600;">Principal</p>
+        <small>M.Sc., B.Ed. | 20+ Years Exp.</small>
+      </div>
+
+      <div class="card icon-box reveal" style="animation-delay: 0.4s;">
+        <img src="https://placehold.co/200x250/1A376B/ffffff?text=Chairman" alt="Chairman" class="faculty-img">
+        <h4>Mr. Mohit Kadiyan</h4>
+        <p style="color: var(--color-secondary); font-weight: 600;">Chairman</p>
+        <small>Strategic Development</small>
+      </div>
+
+      <div class="card icon-box reveal" style="animation-delay: 0.6s;">
+        <img src="https://placehold.co/200x250/1A376B/ffffff?text=Head" alt="Head of School" class="faculty-img">
+        <h4>Ms. Anjali Verma</h4>
+        <p style="color: var(--color-secondary); font-weight: 600;">Head of Senior School</p>
+        <small>Curriculum Specialist</small>
+      </div>
+    </div>
+
+    <div style="text-align: center;">
+      <p style="font-size: 1.1rem;">**Total Faculty Strength: 85+** | <span style="color: var(--color-secondary); font-weight: 600;">Average Teaching Experience: 10 Years</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ACCREDITATION & AFFILIATION -->
+<section class="section reveal" style="background-color: var(--color-background);">
+    <div class="container">
+        <h2 class="section-title">Affiliation & Compliance</h2>
+        <div class="two-grid">
+            <div class="card">
+                <h3>CBSE Affiliation</h3>
+                <p>We are fully affiliated with the **Central Board of Secondary Education (CBSE)**, New Delhi. Our affiliation number is [Insert Affiliation Number]. We strictly adhere to all academic, administrative, and safety guidelines set forth by the board.</p>
+                <i class="fas fa-certificate" style="font-size: 2rem; color: var(--color-secondary);"></i>
+            </div>
+            <div class="card">
+                <h3>Safety & Infrastructure</h3>
+                <p>The school campus is built for compliance, equipped with fire safety systems, CCTV surveillance, and secure transportation. Student well-being and a safe learning environment are our non-negotiable priorities.</p>
+                <i class="fas fa-lock" style="font-size: 2rem; color: var(--color-primary);"></i>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

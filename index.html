@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- HERO SECTION - SLIDESHOW CONTROLLED BY JS -->
+<section class="hero"
+         data-bg-images='[
+           "https://placehold.co/1920x800/1A376B/ffffff?text=Slide+1%3A+Modern+Classroom",
+           "https://placehold.co/1920x800/FF6B6B/ffffff?text=Slide+3%3A+Science+Lab",
+           "https://placehold.co/1920x800/14284d/ffffff?text=Slide+4%3A+Students+Learning"
+         ]'>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="reveal" style="animation-delay: 0.2s;">Empowering the Next Generation of Global Thinkers</h1>
+    <p class="lead reveal" style="animation-delay: 0.4s;">A holistic approach combining strong CBSE academics with character development, state-of-the-art facilities, and caring educators.</p>
+    <a href="{{ url_for('admission') }}" class="btn-glow reveal" style="animation-delay: 0.6s;">Start Your Application Journey</a>
+  </div>
+
+  <!-- Animated Floating Icons (Visual Flair) -->
+  <img src="https://placehold.co/50x50/ffffff/1A376B?text=📚" class="floating-icon" style="top: 10%; left: 15%; animation-delay: 1s;">
+  <img src="https://placehold.co/50x50/ffffff/FF6B6B?text=💡" class="floating-icon" style="top: 20%; right: 10%; animation-delay: 2s;">
+  <img src="https://placehold.co/50x50/ffffff/00BFFF?text=🏆" class="floating-icon" style="bottom: 15%; left: 8%; animation-delay: 3s;">
+</section>
+
+<!-- SCHOOL FACTS / HIGHLIGHTS -->
+<section class="section reveal">
+  <div class="container four-grid">
+    <div class="icon-box card">
+      <i class="fas fa-graduation-cap"></i>
+      <h3>25+ Years of Excellence</h3>
+      <p>A legacy of academic success and nurturing compassionate citizens since 1995.</p>
+    </div>
+    <div class="icon-box card">
+      <i class="fas fa-microscope"></i>
+      <h3>Modern STEM Labs</h3>
+      <p>Dedicated facilities for Physics, Chemistry, Biology, and Robotics for practical learning.</p>
+    </div>
+    <div class="icon-box card">
+      <i class="fas fa-users"></i>
+      <h3>Dedicated Faculty</h3>
+      <p>100% certified, experienced teachers committed to individualized student growth.</p>
+    </div>
+    <div class="icon-box card">
+      <i class="fas fa-running"></i>
+      <h3>Holistic Development</h3>
+      <p>Balancing academics with sports, arts, and skill development programs.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MESSAGE FROM THE PRINCIPAL -->
+<section class="section reveal" style="background-color: var(--color-light-grey);">
+  <div class="container two-grid">
+    <div>
+      <img src="https://placehold.co/500x350/1A376B/ffffff?text=Principal+Image" alt="Principal's Photo" class="about-img">
+    </div>
+    <div>
+      <h2 class="section-title" style="text-align: left;">A Message from Our Principal</h2>
+      <p>
+        "Welcome to Indo American Sr. Sec. School! Our primary goal is to create a dynamic learning environment where every child feels challenged, supported, and valued. We are dedicated to instilling not just knowledge, but also the character and resilience needed to excel in a globalized world. We look forward to partnering with you in your child's educational journey."
+      </p>
+      <p style="font-weight: 700; color: var(--color-primary);">— Mrs. Mamta, Principal</p>
+      <a href="{{ url_for('about') }}" class="btn-outline">Read Our Full Story</a>
+    </div>
+  </div>
+</section>
+
+<!-- ACADEMIC STREAMS PREVIEW -->
+<section class="section reveal">
+  <div class="container">
+    <h2 class="section-title">Academic Pathways</h2>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
+      Explore the rigorous and diversified streams offered, all designed to prepare students for top universities and global careers.
+    </p>
+    <div class="three-grid">
+      <div class="card icon-box reveal" style="animation-delay: 0.1s;">
+        <i class="fas fa-atom"></i>
+        <h4>Science Stream</h4>
+        <p>A strong foundation in Physics, Chemistry, Mathematics, and Biology, geared towards engineering and medical entrance exams.</p>
+      </div>
+      <div class="card icon-box reveal" style="animation-delay: 0.3s;">
+        <i class="fas fa-chart-line"></i>
+        <h4>Commerce Stream</h4>
+        <p>Expert coaching in Accountancy, Business Studies, and Economics for future leaders in finance and management.</p>
+      </div>
+      <div class="card icon-box reveal" style="animation-delay: 0.5s;">
+        <i class="fas fa-book-open"></i>
+        <h4>Humanities Stream</h4>
+        <p>Fostering critical thinking through Psychology, History, Political Science, and Sociology for civil services and liberal arts careers.</p>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 40px;">
+      <a href="{{ url_for('academics') }}" class="btn-primary">View Full Curriculum</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS & REVIEWS -->
+<section class="section reveal" style="background-color: var(--color-primary); color: white;">
+  <div class="container">
+    <h2 class="section-title" style="color: white;">What Our Community Says</h2>
+    <div class="testimonial-slider">
+      <div class="test-slides">
+        <div class="slide">
+          <div class="card">
+            <blockquote>
+              <i class="fas fa-quote-left" style="color: var(--color-secondary); margin-right: 10px;"></i>
+              The school staff are incredibly supportive. The integration of technology in the classroom has made learning truly interactive and fun for my children.
+              <div class="kicker">— Mrs. Sharma (Parent of Class VII & IX Students)</div>
+            </blockquote>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="card">
+            <blockquote>
+              <i class="fas fa-quote-left" style="color: var(--color-secondary); margin-right: 10px;"></i>
+              I’m proud to be an IAS student. The Science labs, robotics club, and career guidance have given me the confidence to pursue my dream of engineering.
+              <div class="kicker">— Raj, Class X Student</div>
+            </blockquote>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="card">
+            <blockquote>
+              <i class="fas fa-quote-left" style="color: var(--color-secondary); margin-right: 10px;"></i>
+              A school that balances rigorous academics with arts and competitive sports. The focus on character development is truly commendable.
+              <div class="kicker">— Mr. Singh (Local Community Leader & Alumnus)</div>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+      <div class="test-controls">
+        <button class="tprev"><i class="fas fa-chevron-left"></i></button>
+        <button class="tnext"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALL TO ACTION: ADMISSION -->
+<section class="section reveal">
+  <div class="container">
+    <div class="card" style="border: 2px solid var(--color-accent); background-color: #f0faff; padding: 40px; text-align: center;">
+      <h3>Ready to shape a brighter future for your child?</h3>
+      <p style="margin-bottom: 20px; font-size: 1.1rem; color: var(--color-light-text);">
+        Limited seats are available for the upcoming academic session. Don't miss the opportunity to join our community of learners.
+      </p>
+      <a class="btn-glow" href="{{ url_for('admission') }}">Start Your Application Now <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+{% endblock %}
